@@ -9,11 +9,11 @@
 
     /**
      * Create chessboard
+     * 
+     * @param $max_rows
+     * @param $max_columns
      */
-    function createChessBoard() {
-        $max_rows = 8;
-        $max_columns = 8;    
-        
+    function createChessBoard($max_rows, $max_columns) {        
         echo '<table class="chess_table" cellspacing="0" cellpadding="0">';
         for ($row = 0; $row < $max_rows; $row++) {
             echo '<tr>';
@@ -30,5 +30,5 @@
     }
 
     importCSS();
-    createChessBoard();
+    createChessBoard(8, 8);
 ?>

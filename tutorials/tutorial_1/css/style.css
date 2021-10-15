@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+body {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.chess_table {
+  border: 2px solid rgba(0, 0, 0, 0.7);
+  margin: 5% auto 0 auto;
+  padding: 0;
+}
+
+.white_square,
+.black_square {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+}
+
+.white_square {
+  background-color: #ffffff;
+}
+
+.black_square {
+  background-color: #000000;
+}

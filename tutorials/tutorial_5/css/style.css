@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+body {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.wrapper {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.directory-block {
+  margin-top: 5%;
+  width: 100%;
+}
+
+.directory-block h1 {
+  font-size: 2.5rem;
+  text-align: left;
+}
+
+.directory-block ul {
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+.directory-block li {
+  margin-top: 2%;
+}
+
+.directory-block li a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #818181;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+.file-block {
+  margin-top: 5%;
+  background-color: #494949;
+  font-size: 1.2rem;
+  padding: 2em;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.file-block h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 3%;
+  text-decoration: underline;
+}
+
+.file-block p {
+  text-align: justify;
+}

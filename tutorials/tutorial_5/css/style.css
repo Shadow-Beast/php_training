@@ -58,3 +58,23 @@ a:hover {
 .file-block p {
   text-align: justify;
 }
+
+.excel-table {
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid #ffffff;
+}
+
+.excel-table :is(td, th) {
+  padding: 1.2em;
+  border: 1px solid #ffffff;
+}
+
+.excel-table td  {  
+  background-color: #3b3b3b;
+}
+
+.excel-table th {
+  color: #3b3b3b;
+  background-color: #c7c7c7;
+}

@@ -18,7 +18,7 @@
         for ($row = 0; $row < $max_rows; $row++) {
             echo '<tr>';
             for ($col = 0; $col < $max_columns; $col++) {
-                if ( ($row+$col)%2 == 0) {
+                if (($row+$col) % 2 == 0) {
                     echo '<td class="white_square"></td>';
                 } else {
                     echo '<td class="black_square"></td>';

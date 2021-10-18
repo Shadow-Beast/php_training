@@ -17,24 +17,24 @@
         
         $max_charInRow;
         if ($max_number%2 != 0) {
-            $max_charInRow=1;
+            $max_charInRow = 1;
         }
         else {
-            $max_charInRow=2;
+            $max_charInRow = 2;
         }
 
         while ($max_charInRow < $max_number) {
             for ($charInRow = 0; $charInRow < $max_charInRow; $charInRow++) {
                 echo $character;
             }
-            $max_charInRow= $max_charInRow + 2;
+            $max_charInRow = $max_charInRow + 2;
             echo "<br>";
         }
         while ($max_charInRow > 0) {            
             for ($charInRow = 0; $charInRow < $max_charInRow; $charInRow++) {
                 echo $character;
             }            
-            $max_charInRow= $max_charInRow - 2;
+            $max_charInRow = $max_charInRow - 2;
             echo "<br>";
         }
 
@@ -42,5 +42,5 @@
     }
 
     importCSS();
-    createDiamondShapeWithCharacter('*',11);
+    createDiamondShapeWithCharacter('*', 11);
 ?>

@@ -33,12 +33,14 @@
                 $file_dir = $dir . $_GET["filename"];
                 $file_extension = explode(".", $_GET["filename"])[1];
                 
-                if ($file_extension == "doc" || $file_extension == "txt") {
+                if ($file_extension == "txt") {
                     readNormalTextFile($file_dir);
                 } elseif ($file_extension == "csv") {
                     readCSVFile($file_dir);
                 } elseif ($file_extension == "xlsx") {
                     readXLSXFile($file_dir);
+                } elseif ($file_extension == "doc") {
+                    readDOCFile($file_dir);
                 } else {
                     echo "Error File Format !";
                 }
@@ -47,7 +49,7 @@
             }
 
             /**
-             * Read file with doc, txt extension
+             * Read file with txt extension
              */
             function readNormalTextFile($file_dir)
             {
@@ -92,18 +94,56 @@
                 if ($xlsx = SimpleXLSX::parse($file_dir)) {
                     echo "<table class='excel-table'>";
                     $row = 0;
-                
-                    foreach ($xlsx->rows() as $elt) {
-                        if ($row == 0) {
-                            echo "<tr><th>" . $elt[0] . "</th><th>" . $elt[1] . "</th></tr>";
-                        } else {
-                            echo "<tr><td>" . $elt[0] . "</td><td>" . $elt[1] . "</td></tr>";
+                    foreach ($xlsx->rows() as $data_in_row) {
+                        echo "<tr>";
+                        if (is_array($data_in_row) || is_object($data_in_row)) {
+                            foreach ($data_in_row as $data) {
+                                if ($row == 0) {
+                                    echo "<th>",$data,"</th>";
+                                } else {
+                                    echo "<td>",$data,"</td>";
+                                }
+                            }
                         }
+                        echo "</tr>";
                         $row++;
                     }
                     echo "</table>";
                 } else {
                     echo SimpleXLSX::parseError();
+                }
+            }
+            /**
+             * Read file with doc extension
+             */
+            function readDOCFile($file_dir)
+            {
+                if (file_exists($file_dir)) {
+                    if (($fh = fopen($file_dir, 'r')) !== false) {
+                        $headers = fread($fh, 0xA00);
+
+                        // 1 = (ord(n)*1) ; Document has from 0 to 255 characters
+                        $n1 = (ord($headers[0x21C]) - 1);
+
+                        // 1 = ((ord(n)-8)*256) ; Document has from 256 to 63743 characters
+                        $n2 = ((ord($headers[0x21D]) - 8) * 256);
+
+                        // 1 = ((ord(n)*256)*256) ; Document has from 63744 to 16775423 characters
+                        $n3 = ((ord($headers[0x21E]) * 256) * 256);
+
+                        // 1 = (((ord(n)*256)*256)*256) ; Document has from 16775424 to 4294965504 characters
+                        $n4 = (((ord($headers[0x21F]) * 256) * 256) * 256);
+
+                        // Total length of text in the document
+                        $textLength = ($n1 + $n2 + $n3 + $n4);
+
+                        $extracted_plaintext = fread($fh, $textLength);
+
+                        // simple print character stream without new lines
+                        //echo $extracted_plaintext;
+
+                        echo nl2br($extracted_plaintext);
+                    }
                 }
             }
         ?>

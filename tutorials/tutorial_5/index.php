@@ -113,6 +113,7 @@
                     echo SimpleXLSX::parseError();
                 }
             }
+            
             /**
              * Read file with doc extension
              */
@@ -138,9 +139,6 @@
                         $textLength = ($n1 + $n2 + $n3 + $n4);
 
                         $extracted_plaintext = fread($fh, $textLength);
-
-                        // simple print character stream without new lines
-                        //echo $extracted_plaintext;
 
                         echo nl2br($extracted_plaintext);
                     }

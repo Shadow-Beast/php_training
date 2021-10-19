@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php
-        if(!empty($_POST["data"])) {
+        if (!empty($_POST["data"])) {
             include "../library/phpqrcode/qrlib.php";
             $txt_data = $_POST["data"];
 
@@ -33,9 +33,8 @@
             echo "<div class= 'qrcode-block'><h1>QR Code Generated Successfully!</h1>";
             echo "<img src='" . $qrcode_img_location . "'>";
             echo "<a class='goback-btn' href='../index.php'>Generate New Code</a></div>";
-        }
-        else {
-            header ("location: ../index.php?nodata=1");
+        } else {
+            header("location: ../index.php?nodata=1");
         }
     ?>
 </body>

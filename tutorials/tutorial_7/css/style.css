@@ -69,8 +69,8 @@ body {
 }
 
 .qrcode-block img {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .goback-btn {

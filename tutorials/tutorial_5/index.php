@@ -31,7 +31,7 @@
                 echo "<div class='file-block'>";
                 echo "<h2>",$_GET["filename"],"</h2><p>";
                 $file_dir = $dir . $_GET["filename"];
-                $file_extension = explode(".", $_GET["filename"])[1];
+                $file_extension = strtolower(pathinfo($file_dir, PATHINFO_EXTENSION));
                 
                 if ($file_extension == "txt") {
                     readNormalTextFile($file_dir);

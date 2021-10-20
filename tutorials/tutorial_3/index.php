@@ -11,7 +11,7 @@
      * Create Birthday Form
      */
     function createBirthdayForm() {
-        echo '<form class="birthday-form" action="tutorial_3.php"><fieldset>';
+        echo '<form class="birthday-form" action="index.php"><fieldset>';
         echo '<legend>Age Calculator</legend>';
         echo '<label for="birthday">Birthday: </label>';
         echo '<input type="date" id="birthday" name="birthday"';

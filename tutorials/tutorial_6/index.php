@@ -17,7 +17,7 @@
             <input class="upload-btn" type="submit" value="Upload" name="upload">
 
             <?php
-                if(!empty($_GET["msg"]) || !empty($_GET["uploadOk"])) {
+                if(isset($_GET["msg"]) || isset($_GET["uploadOk"])) {
                     $uploadOk = $_GET["uploadOk"];
                     $msg = $_GET["msg"];
                     if($uploadOk == 1) {

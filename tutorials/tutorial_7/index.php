@@ -14,7 +14,7 @@
             <legend>QRCode Generator</legend>
             <?php
                 //When Clicked without no data
-                if(!empty($_GET["nodata"])) {
+                if(isset($_GET["nodata"])) {
                     echo "<p class='warning-txt'>Please Enter data you want to generate !</p>";
                 }
             ?>

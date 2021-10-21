@@ -24,7 +24,7 @@
             $msg .= "Connect Successful!";
         }
 
-        $createdb_query = "CREATE DATABASE " . DB_NAME;
+        $createdb_query = "CREATE DATABASE IF NOT EXISTS " . DB_NAME;
         if(mysqli_query($link, $createdb_query)){
             $msg .= "<br>Database created successfully.";
         } else {
@@ -34,7 +34,7 @@
         $usedb_query = "USE " . DB_NAME;
         mysqli_query($link, $usedb_query);
 
-        $createtable_sql = "CREATE TABLE sale_orders(
+        $createtable_sql = "CREATE TABLE IF NOT EXISTS sale_orders(
                                 id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
                                 order_date DATE NOT NULL,
                                 region VARCHAR(30) NOT NULL,

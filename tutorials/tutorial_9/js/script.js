@@ -30,5 +30,15 @@ function showGraph() {
     var barGraph = new Chart(graphTarget, {
       type: "bar",
       data: chartdata,
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true,
+              min: 0
+            }
+          }]
+        }
+      }
     });
 }

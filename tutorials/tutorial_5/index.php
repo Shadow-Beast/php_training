@@ -53,7 +53,7 @@
              */
             function readNormalTextFile($file_dir)
             {
-                $file_read= file_get_contents($file_dir);
+                $file_read = file_get_contents($file_dir);
                 echo nl2br($file_read);
             }
 

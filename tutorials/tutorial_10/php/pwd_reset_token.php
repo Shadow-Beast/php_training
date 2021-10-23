@@ -26,7 +26,7 @@
                     if($email == $_POST["entered_email"]) {                        
                         $token = md5($email).rand(10,9999);
                         $mail = new PHPMailer();
-                        $expFormat = mktime(date("H")+1, date("i"), date("s"), date("m") ,date("d"), date("Y"));
+                        $expFormat = mktime(date("H")+1, date("i"), date("s"), date("m"), date("d"), date("Y"));
                         $expDate = date("Y-m-d H:i:s",$expFormat);
                         $_SESSION["one_time_code"] = ["token" => $token, "expDate" => $expDate];
                         

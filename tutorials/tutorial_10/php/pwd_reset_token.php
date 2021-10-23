@@ -50,6 +50,7 @@
 
                         /* Add a recipient. */
                         $mail->addAddress($email, "Zaw Win Tin");
+                        $mail->addReplyTo($email);
 
                         $mail->IsHTML(true);
                         $mail->Subject  = "Reset Password";

@@ -83,7 +83,7 @@
                             echo '<a class="try-again-link" href="forgot_pwd.php">Try again</a>';
                         }
                         //Reset one_time_code
-                        $_SESSION["one_time_code"] = ["token" => "", "expDate" => ""];
+                        unset($_SESSION["one_time_code"]);
                     }
                 }  
             ?>                 

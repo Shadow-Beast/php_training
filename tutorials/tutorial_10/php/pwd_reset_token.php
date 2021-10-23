@@ -43,7 +43,7 @@
 
                         /* Log in with Sender email and password */
                         $mail->Username = "sender@gmail.com";;
-                        $mail->Password = 'senderpasswordhere';
+                        $mail->Password = "senderpasswordhere";
 
                         /* Set the mail sender. */
                         $mail->setFrom("sender@gmail.com", "Sender");

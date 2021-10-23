@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
+}
+
+.box {
+  width: 500px;
+  padding: 2.5em;
+  margin: 10% auto 0;
+  background: #191919;
+  text-align: center;
+  transition: 0.25s;
+}
+
+.box h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.box input[type="email"],
+.box input[type="text"],
+.box input[type="password"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 1.25em auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 0.625em;
+  width: 250px;
+  outline: none;
+  color: #ffffff;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.box input[type="email"]:focus,
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+  width: 300px;
+  border-color: #2ecc71;
+}
+
+.box input[type="submit"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 1.25em auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 0.85em 2.5em;
+  outline: none;
+  color: #ffffff;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.box input[type="submit"]:hover {
+  background: #2ecc71;
+}
+
+.forgot {
+  text-decoration: underline;
+}
+
+.forgot:hover {
+  opacity: 0.6;
+}
+
+.try-again-link {
+  text-decoration: none;
+  border: 0;
+  background: none;
+  display: inline-block;
+  margin: 1.25em auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 0.85em 2.5em;
+  outline: none;
+  color: #ffffff;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.try-again-link:hover {
+  background: #3498db;
+}
